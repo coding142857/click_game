@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="icon/icon.ico" type="icon"/>
+        <meta charset="UTF-8" />
+        <title>title</title>
+        <noscript>
+            <span style="color : red;">NO Script</span>
+        </noscript>
+        <style>
+            @import url("main.css");
+        </style>
+    </head>
+    <body onselectstart="return false" draggable="false">
+        <header>
+            <!--Header-->
+        </header>
+        <nav>
+            <!--Nav-->
+            <div height="590px">
+                <div class="shop_div">
+                    <img src="img/shop/Villager-Face.png">
+                    <div id="sell"></div>
+                </div>
+                <div class="shop_div">
+                    <img src="img/shop/table.png">
+                    <img src="img/shop/false.png" id="iftable">
+                    <div id="create"></div>
+                </div>
+                <div class="shop_div">
+                    <img src="img/shop/furnace.png">
+                    <img src="img/shop/false.png" id="iffurnace">
+                    <div id="furnace"></div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <!--Main-->
+            <div class="image" id="image" draggable="false">
+            </div>
+            <div id="cursor_" draggable="false">
+                <img src="img/item/pickaxe/pickaxe1.png" id="cursor_img" class="unckick" draggable="false">
+            </div>
+            <button id="last_level" class="down">'<'</button>
+            <div id="level" class="down"></div>
+            <button id="next_level" class="down">'>'</button>
+        </main>
+        <aside>
+            <!--Aside-->
+            <button onclick="to_tool(1)" id="tool1"></button>
+            <button onclick="to_tool(2)" id="tool2"></button>
+            <button onclick="to_tool(3)" id="tool3"></button>
+            <div id="drops"></div>
+        </aside>
+        <!--<footer>
+            <!- -Footer- ->
+            
+        </footer>-->
+        <script src="main.js" defer onload="
+            try {
+                update(); 
+            } finally {
+                document.querySelector('#cursor_img').classList.add('unclick');
+                document.querySelector('#cursor_').style.left = `${document.querySelector('body').scrollWidth * 0.15}px`;
+                document.querySelector('#cursor_').style.top = `${document.querySelector('header').scrollHeight}px`;
+                to_tool(1);
+            }"></script>
+    </body>
+</html>
